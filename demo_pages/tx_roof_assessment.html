@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Sidebars · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+
+    
+
+    
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="sidebars.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="bootstrap" viewBox="0 0 118 94">
+    <title>Bootstrap</title>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+  </symbol>
+  <symbol id="home" viewBox="0 0 16 16">
+    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+  </symbol>
+  <symbol id="speedometer2" viewBox="0 0 16 16">
+    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+    <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+  </symbol>
+  <symbol id="table" viewBox="0 0 16 16">
+    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+  </symbol>
+  <symbol id="people-circle" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+  </symbol>
+  <symbol id="grid" viewBox="0 0 16 16">
+    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+  </symbol>
+  <symbol id="collection" viewBox="0 0 16 16">
+    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+  </symbol>
+  <symbol id="calendar3" viewBox="0 0 16 16">
+    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+  </symbol>
+  <symbol id="chat-quote-fill" viewBox="0 0 16 16">
+    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.194 6.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 6C4.776 6 4 6.746 4 7.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 9.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 6c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z"/>
+  </symbol>
+  <symbol id="cpu-fill" viewBox="0 0 16 16">
+    <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+    <path d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z"/>
+  </symbol>
+  <symbol id="gear-fill" viewBox="0 0 16 16">
+    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+  </symbol>
+  <symbol id="speedometer" viewBox="0 0 16 16">
+    <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+    <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
+  </symbol>
+  <symbol id="toggles2" viewBox="0 0 16 16">
+    <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2 0-.729-.195-1.412-.535-2z"/>
+    <path d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm.535-10a3.975 3.975 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126c.091-.355.23-.69.41-1H4a2 2 0 1 0 0 4h2.535z"/>
+    <path d="M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
+  </symbol>
+  <symbol id="tools" viewBox="0 0 16 16">
+    <path d="M1 0L0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.356 3.356a1 1 0 0 0 1.414 0l1.586-1.586a1 1 0 0 0 0-1.414l-3.356-3.356a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708zM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11z"/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </symbol>
+  <symbol id="geo-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+  </symbol>
+</svg>
+
+<main class="d-flex flex-nowrap">
+  <h1 class="visually-hidden">Sidebars examples</h1>
+  <div class="b-example-divider b-example-vr"></div>
+  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Nearmap API Vis</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#coverage-collapse" aria-expanded="true">
+            Coverage
+        </button>
+        <div class="collapse show" id="coverage-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="coverage_call.html" class="link-dark d-inline-flex text-decoration-none rounded">Coverage API Call</a></li>
+            </ul>
+        </div>
+        </li>
+        <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dsm-collapse" aria-expanded="false">
+            DSM/True Ortho
+        </button>
+        <div class="collapse show" id="dsm-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="dsm_call.html" class="link-dark d-inline-flex text-decoration-none rounded">Coverage/Token Call</a></li>
+            </ul>
+        </div>
+        </li>
+        <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#ai-collapse" aria-expanded="false">
+            Ai feature API
+        </button>
+        <div class="collapse show" id="ai-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="ai_call.html" class="link-dark d-inline-flex text-decoration-none rounded">Ai call</a></li>
+            </ul>
+        </div>
+        </li>
+        <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#tx-collapse" aria-expanded="false">
+            Tx API
+        </button>
+        <div class="collapse show" id="tx-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="tx_call.html" class="link-dark d-inline-flex text-decoration-none rounded">tx example call</a></li>
+            <li><a href="tx_roof_assessment.html" class="link-dark d-inline-flex text-decoration-none rounded">tx roof assessment response</a></li>
+            </ul>
+        </div>
+        </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          API Swagger Docs
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="https://docs.nearmap.com/display/ND/Coverage+API" class="link-dark d-inline-flex text-decoration-none rounded">Coverage</a></li>
+            <li><a href="https://docs.nearmap.com/display/ND/DSM+and+True+Ortho+API" class="link-dark d-inline-flex text-decoration-none rounded">DSM/True Ortho</a></li>
+            <li><a href="https://docs.nearmap.com/display/ND/Nearmap+AI+Feature+API" class="link-dark d-inline-flex text-decoration-none rounded">Ai Feature API</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="b-example-divider b-example-vr"></div>
+    <div class="container-fluid py-3">
+        
+        <style>  
+            body {
+              margin: 0;
+              padding: 0;
+            }
+            
+            section {
+              width: 100%;
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+            }
+            
+            textarea {
+              width: 100%;
+              height: 100%;
+            }
+            
+            view {
+              display: flex;
+              width: 100%;
+              height: 300px;
+            }
+            
+            #jsoncrackEmbed {
+              flex: 1;
+              order: 2;
+            }
+
+            .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+            </style>
+          
+          <section>
+
+            <div class="bd-example">
+                <div class="mb-3">
+                  <input type="text" class="form-control form-control-lg" id="input_call" value="https://api.nearmap.com/ai/assessment/v1/tx/surveyresources/c03b61b7-e88b-5a98-b842-07bc24e65e9a/nearmap_roof_cond.json?transactionToken={TokenHERE}" name="input_call">
+                </div>    
+            </div>
+                <!--
+              !ATTENTION: YOU CAN REMOVE ATTRIBUTE FROM HERE:
+              https://github.com/sponsors/AykutSarac
+              -->
+                
+                <!-- JSON Crack iframe embed goes here -->
+                <iframe id="jsoncrackEmbed" src="https://jsoncrack.com/widget?t=2" width="100%" height="100%" style="border: 2px solid #b9bbbe; border-radius: 6px;"></iframe>
+              
+                <!-- Option 1: Communicate with onclick event -->
+                <script>
+                  function sendToEmbed() {
+                    const jsonCrackEmbed = document.getElementById("jsoncrackEmbed");
+                    
+                    const json = document.getElementById("jsoncrackInput").value;
+                    
+                    const options = {
+                      theme: "light", // "light" or "dark"
+                      direction: "RIGHT", // "UP", "DOWN", "LEFT", "RIGHT"
+                    };
+                    
+                    jsonCrackEmbed.contentWindow.postMessage({ json, options }, "*");
+                  }
+                </script>
+              
+                <!--
+                Option 2: Load JSON after widget loaded
+                Note: You can just put the code into iframe element's "onload event"
+                Note: Delaying is a must if you want it to work on load event
+                -->
+                <script>
+                  const jsonCrackEmbed = document.querySelector("iframe");
+                  jsonCrackEmbed?.addEventListener("load", () => {
+                    setTimeout(() => sendToEmbed(), 500);
+                  });
+                </script>
+              
+                <!-- Input and button to track and send changes -->
+                <view>
+                  <textarea id="jsoncrackInput" type="text">
+{"address":"1320 Pasadena Dr Austin TX 78757-1948 United States of America","captureDate":"2022-09-12","urlLink":"https://apps.nearmap.com/maps/#/@30.3452907,-97.7249163,20.00z,0d/V/20220912?locationMarker","properties":{"007b8c46-bfb8-528c-ab28-bda98453ec0b":{"description":"gable ratio","value":"0.000000"},"01aa1496-9517-50f2-af77-22c37cc17f8a":{"description":"roof with temporary repair presence","value":"false"},"0262ed29-391c-5769-b12a-75aaa9db57fb":{"description":"metal clipped area (sqm)","value":"55.6"},"065e9df6-02df-53c8-bf98-27b28a8d6c3d":{"description":"tile count","value":"0"},"07810ecd-4c4b-5c0d-a5fd-e42fea074bd4":{"description":"zinc staining count","value":"0"},"07b0edd9-78f6-5f2e-a325-f01f3a6f807d":{"description":"tile dominant","value":""},"093485dd-148b-533e-b03f-b26d27cfb593":{"description":"roof clipped area (sqft)","value":"2890"},"0cf3109e-bf3c-5d1e-a18b-338a75e8c9c0":{"description":"shingle presence","value":"true"},"0dbae767-c371-5c0e-b4bb-7a54ed8fa9f6":{"description":"metal dominant","value":"false"},"0ec465aa-abf7-5d21-998a-2977ee4d3ae0":{"description":"roof ponding presence","value":"false"},"115ac567-081e-52ff-8ff7-c7368ac126d9":{"description":"turret count","value":"0"},"12419956-5aa6-5ada-a924-c958151e166f":{"description":"roof confidence","value":"0.999884"},"124e1263-2ccc-52ca-9e3f-3b1468486f8b":{"description":"dutch gable count","value":"0"},"130b03db-d393-5a24-98a2-076a3e206cea":{"description":"dutch gable confidence","value":""},"131c1d99-a9a9-5bb2-b537-a3b4ed202768":{"description":"shingle ratio","value":"0.000000"},"19077308-0c10-58fc-925b-80182462e837":{"description":"gable confidence","value":"0.999119"},"1b573b3a-5e0b-5b31-8de2-eb62ef0c00e6":{"description":"missing roof tile or shingle ratio","value":""},"1bf5fe7c-d6b6-549a-bc24-813ee6594595":{"description":"2 story confidence","value":""},"1ea08b0a-19ef-5893-bcf4-e730a31d80d2":{"description":"shingle dominant","value":"false"},"1f2a65c1-7a42-52a7-9839-38d07059ebd4":{"description":"shingle clipped area (sqft)","value":"2031"},"20c7be15-f217-5cd5-92cf-271fc4e244b5":{"description":"dutch gable clipped area (sqm)","value":""},"210add5f-5cb6-5fe8-9ef8-b4cea6d74c6d":{"description":"hip confidence","value":""},"21379d35-cdfc-53d1-922c-948980949e0c":{"description":"roof with permanent repair presence","value":"false"},"227e61ee-8a23-50af-aaec-f50750b8d76e":{"description":"flat count","value":"3"},"22f4bf06-7f72-5170-ac74-76ed1db1028c":{"description":"roof tile/shingle discoloration confidence","value":""},"2709841b-809f-5c15-90a1-5135879d9faf":{"description":"hip count","value":"0"},"283c040b-7b41-54e6-a5f4-02503f5e2f77":{"description":"turret confidence","value":""},"2bc560c7-6e8a-5b32-adf3-30d6c9c85ea1":{"description":"address","value":"1320 Pasadena Dr Austin TX 78757-1948 United States of America"},"2d9c9f84-ca01-55aa-9365-f139b9c4be16":{"description":"shingle clipped area (sqm)","value":"188.6"},"2dbe363b-6e4d-5104-9cc8-577da0cf65b4":{"description":"missing roof tile or shingle count","value":"0"},"2ed0db12-d355-5c50-b41e-e81fd4df12cc":{"description":"roof condition summary score","value":"60"},"2ee94f7d-8baf-5e5a-8662-fc87b5b2ffb1":{"description":"flat presence","value":"true"},"30a7df49-304c-5221-9586-d66bf2048f76":{"description":"missing roof tile or shingle clipped area (sqft)","value":""},"3c5b7b6e-4f43-55f0-8ac2-f5027fce86b0":{"description":"hip presence","value":"false"},"411a4bbe-4b26-5ab9-896a-4e580d11737b":{"description":"roof with permanent repair clipped area (sqft)","value":""},"43686aba-01f5-548d-9b56-d50b84a2ec40":{"description":"roof count","value":"3"},"45d170f6-3fa2-53c1-b527-043b9ddf15cd":{"description":"height (ft)","value":""},"462a59c1-78fb-5d39-a637-a6e607f515ca":{"description":"flat ratio","value":"0.000000"},"486ba3a4-7b8e-5d48-81fb-7b893da8a1a0":{"description":"missing roof tile or shingle clipped area (sqm)","value":""},"4df56fbf-f3a6-5fb9-8498-3c60c61f31ee":{"description":"zinc staining clipped area (sqm)","value":""},"5019100c-1b99-57ed-b38c-dd2bd023773e":{"description":"roof clipped area (sqm)","value":"268.6"},"53c84c39-d01f-559c-971b-3869cabd22a1":{"description":"building clipped area (sqft)","value":"2890"},"545239ec-3e7f-538e-8286-4a14381423dd":{"description":"roof condition category","value":"Fair"},"565021b3-8d01-53bd-bf3f-6936733d1dbc":{"description":"tile clipped area (sqm)","value":""},"57cb5c4d-b524-592c-8205-a58aa58bda53":{"description":"flat clipped area (sqft)","value":"398"},"58c3a796-3184-59aa-8e10-cff4ef6a4139":{"description":"turret clipped area (sqm)","value":""},"5964120f-6765-5ed6-a00d-b8872b5ba138":{"description":"hip ratio","value":""},"5992c469-6529-57ec-b7ee-5e9b9c5942e7":{"description":"roof with temporary repair clipped area (sqm)","value":""},"5ac4eb77-f6f7-55e0-9b57-5c805af2f4a5":{"description":"roof ponding ratio","value":""},"5b2a0c14-7f5f-5549-89dd-86f96f4c3f58":{"description":"gable count","value":"2"},"646bc933-a97a-5104-a289-2beb83751138":{"description":"roof with temporary repair confidence","value":""},"654f06e8-d33d-5b45-99d5-eb949dce8a10":{"description":"roof tile/shingle discoloration ratio","value":""},"68d184e7-34f0-5845-bfd1-a74ab1a93c13":{"description":"building clipped area (sqm)","value":"268.6"},"6b8503dc-8553-5928-b02f-a4598fce829f":{"description":"missing roof tile or shingle confidence","value":""},"6c61f542-0624-5424-be61-06e58333881d":{"description":"metal count","value":"3"},"6d2b4795-2181-5863-b18b-ef526412e2e7":{"description":"roof ponding count","value":"0"},"6dd5ff1a-f40a-5a34-a274-9ae35729325b":{"description":"metal clipped area (sqft)","value":"599"},"70f72112-62a4-574f-af6f-16819c5fb2ca":{"description":"roof rusting clipped area (sqm)","value":""},"748a6069-c857-5af4-a956-d2af092077a8":{"description":"roof ponding clipped area (sqft)","value":""},"74a843bf-e6e7-5151-b124-1a4b906f18fa":{"description":"metal presence","value":"true"},"779578e4-931d-5742-abb9-004c511c2d59":{"description":"missing roof tile or shingle presence","value":"false"},"7a0834cb-c340-501b-acca-48238cfdd16b":{"description":"zinc staining presence","value":"false"},"7b02c815-7c65-524c-8814-edef0004ea26":{"description":"gable clipped area (sqm)","value":"190.9"},"7b0b41c3-f4e8-54fb-b4ae-c14db493bbbc":{"description":"flat confidence","value":"0.954660"},"7bf696ba-cb02-5567-9fcc-f335c598edaf":{"description":"zinc staining confidence","value":""},"7eb6c701-a003-5ff4-80c3-5c9c5403d189":{"description":"dutch gable clipped area (sqft)","value":""},"7ef99d3d-1b92-516c-8260-4bbbfb7d58b6":{"description":"1 story confidence","value":""},"83768083-cf16-5d2f-99f7-92c4e3e74b8f":{"description":"url link","value":"https://apps.nearmap.com/maps/#/@30.3452907,-97.7249163,20.00z,0d/V/20220912?locationMarker"},"88f3e05b-ab98-53e0-ad28-8a00312dd1b7":{"description":"structurally damaged roof clipped area (sqm)","value":""},"899352b4-a9e6-5f77-b8a9-f61f82441ca5":{"description":"tile presence","value":"false"},"8bb8b694-481e-50e3-924c-4264d01b32ad":{"description":"roof with temporary repair count","value":"0"},"8f0f0c41-8f78-51f5-8396-ac47c9fab216":{"description":"roof with permanent repair ratio","value":""},"918858c1-79af-5f00-a860-38eb84fb4f0e":{"description":"hip clipped area (sqft)","value":""},"9882088b-1bf1-5545-bdb7-df61328d7578":{"description":"gable presence","value":"true"},"9c7e6313-e9a8-538c-86fb-7a3e9171190b":{"description":"metal confidence","value":"0.986783"},"9f2b2e1a-ab28-5936-8563-ed28ae1b36f2":{"description":"pitch degrees","value":""},"a0a7cb47-6360-5bbd-93be-c2bbef263742":{"description":"building count","value":"3"},"a27b2fda-b5dd-59df-9a65-fe8c6ad3350c":{"description":"structurally damaged roof clipped area (sqft)","value":""},"a7740fe6-eb36-57dd-913f-02ae7610066f":{"description":"roof rusting clipped area (sqft)","value":""},"ae121af2-fd13-513b-81d3-2767ce4f4106":{"description":"tile confidence","value":""},"b204ac85-e93c-5089-be77-fe6ecb3c2f0b":{"description":"gable clipped area (sqft)","value":"2055"},"b22c44fe-936e-5c12-b832-a694c005cea8":{"description":"structurally damaged roof presence","value":"false"},"b2756b78-a41b-5099-8b9d-afcfdfbbd364":{"description":"structurally damaged roof confidence","value":""},"b4f367e2-73a6-5a62-8aa0-a3d06f0bac8c":{"description":"turret ratio","value":""},"ba655924-ca97-52bd-8637-ba85b72a3f83":{"description":"shingle confidence","value":"0.999119"},"bc6a1bf9-8210-5500-99fc-aecacf35ed01":{"description":"roof tile/shingle discoloration clipped area (sqft)","value":""},"beb41dd1-d0bd-5938-9ef2-8d21653149f7":{"description":"hip clipped area (sqm)","value":""},"c1c05131-c20f-5fb1-a15d-d18ae0a05e86":{"description":"building presence","value":"true"},"c67f1733-a90c-515b-98d8-7c859b32bd17":{"description":"roof ponding clipped area (sqm)","value":""},"ca63903c-d37c-5f7d-956b-f31ce4e04111":{"description":"structurally damaged roof count","value":"0"},"cb68740e-c83c-5237-ad55-25e85ea641da":{"description":"roof tile/shingle discoloration presence","value":"false"},"ccd75eb0-c570-53a0-b9c9-c1a8b137ce29":{"description":"height (m)","value":""},"ccede2ad-c9a6-5588-93d0-51c41009754b":{"description":"turret clipped area (sqft)","value":""},"cdce0c0c-ac1e-5d75-8758-60c094bf5e70":{"description":"zinc staining clipped area (sqft)","value":""},"cffdeb80-02d0-54d6-a7ad-c82dfc57cb7c":{"description":"roof tile/shingle discoloration clipped area (sqm)","value":""},"d8bc1884-bf3a-566d-86f0-7a7364705f85":{"description":"zinc staining ratio","value":""},"d95a373b-8eee-5c5a-8bd2-eed6f29cb327":{"description":"roof rusting count","value":"0"},"db7c5528-5778-566d-a005-f42716117271":{"description":"tile clipped area (sqft)","value":""},"df0db13c-72a3-5f3a-b2fc-662f74584af7":{"description":"roof rusting presence","value":"false"},"e09e3924-d921-5e37-a122-00442856f901":{"description":"3+ story confidence","value":""},"e0b8ffd0-0307-5f98-a01d-a996b097f047":{"description":"flat clipped area (sqm)","value":"37.1"},"e1c2203d-640e-5694-be0e-42dd5c372146":{"description":"tile ratio","value":""},"e1c317cd-c7a8-5d0c-be27-386608c87c75":{"description":"turret presence","value":"false"},"e27bbc7d-84be-59eb-8202-501f382f6779":{"description":"dutch gable presence","value":"false"},"e4060345-a28c-5a00-a57a-c20543efa058":{"description":"roof rusting confidence","value":""},"e5ca14b3-7a12-5740-9922-ed5c98f3d800":{"description":"metal ratio","value":"0.000000"},"e9e6de3a-436a-5f8b-b16d-8344099a428b":{"description":"roof rusting ratio","value":""},"ea9ed8f6-a370-51bb-9200-944ff148b019":{"description":"roof with permanent repair count","value":"0"},"ebe98268-b67b-5f34-b894-d787152f32b8":{"description":"roof presence","value":"true"},"efa9033d-6831-5c7f-9b75-300b66d8473f":{"description":"building confidence","value":"0.999884"},"efb1610a-ad32-5976-8c45-6abb30fe83c4":{"description":"roof tile/shingle discoloration count","value":"0"},"f0fbc01b-535a-5247-b34d-f458cad65423":{"description":"shingle count","value":"2"},"f56c5332-93fb-504f-aaec-4331e3928879":{"description":"roof with temporary repair clipped area (sqft)","value":""},"f6838112-2044-5932-87f1-5f9d4b8cb8e1":{"description":"structurally damaged roof ratio","value":""},"f7f5a8e0-4a34-524e-90c3-56622061c1f3":{"description":"roof ponding confidence","value":""},"f84cbf2c-4947-5fea-b4df-6956059ce14c":{"description":"roof with permanent repair clipped area (sqm)","value":""},"f94d1616-1270-56a3-b000-c2020fb47f52":{"description":"roof with permanent repair confidence","value":""},"fa19e43f-1525-5fad-b423-c7d2d70c796d":{"description":"roof with temporary repair ratio","value":""},"fd68ba03-57f8-5ae8-bb23-b93242a84a37":{"description":"dutch gable ratio","value":""}},"roofs":[{"roof-1":{"007b8c46-bfb8-528c-ab28-bda98453ec0b":{"description":"gable ratio","value":"0.965830"},"01aa1496-9517-50f2-af77-22c37cc17f8a":{"description":"roof with temporary repair presence","value":"false"},"0262ed29-391c-5769-b12a-75aaa9db57fb":{"description":"metal clipped area (sqm)","value":""},"065e9df6-02df-53c8-bf98-27b28a8d6c3d":{"description":"tile count","value":"0"},"07810ecd-4c4b-5c0d-a5fd-e42fea074bd4":{"description":"zinc staining count","value":"0"},"07b0edd9-78f6-5f2e-a325-f01f3a6f807d":{"description":"tile dominant","value":""},"093485dd-148b-533e-b03f-b26d27cfb593":{"description":"roof clipped area (sqft)","value":"2058"},"0cf3109e-bf3c-5d1e-a18b-338a75e8c9c0":{"description":"shingle presence","value":"true"},"0dbae767-c371-5c0e-b4bb-7a54ed8fa9f6":{"description":"metal dominant","value":""},"0ec465aa-abf7-5d21-998a-2977ee4d3ae0":{"description":"roof ponding presence","value":"false"},"115ac567-081e-52ff-8ff7-c7368ac126d9":{"description":"turret count","value":"0"},"12419956-5aa6-5ada-a924-c958151e166f":{"description":"roof confidence","value":"0.962891"},"124e1263-2ccc-52ca-9e3f-3b1468486f8b":{"description":"dutch gable count","value":"0"},"130b03db-d393-5a24-98a2-076a3e206cea":{"description":"dutch gable confidence","value":""},"131c1d99-a9a9-5bb2-b537-a3b4ed202768":{"description":"shingle ratio","value":"0.954289"},"19077308-0c10-58fc-925b-80182462e837":{"description":"gable confidence","value":"0.958984"},"1b573b3a-5e0b-5b31-8de2-eb62ef0c00e6":{"description":"missing roof tile or shingle ratio","value":""},"1bf5fe7c-d6b6-549a-bc24-813ee6594595":{"description":"2 story confidence","value":"0.04"},"1ea08b0a-19ef-5893-bcf4-e730a31d80d2":{"description":"shingle dominant","value":"true"},"1f2a65c1-7a42-52a7-9839-38d07059ebd4":{"description":"shingle clipped area (sqft)","value":"1965"},"20c7be15-f217-5cd5-92cf-271fc4e244b5":{"description":"dutch gable clipped area (sqm)","value":""},"210add5f-5cb6-5fe8-9ef8-b4cea6d74c6d":{"description":"hip confidence","value":""},"21379d35-cdfc-53d1-922c-948980949e0c":{"description":"roof with permanent repair presence","value":"false"},"227e61ee-8a23-50af-aaec-f50750b8d76e":{"description":"flat count","value":"0"},"22f4bf06-7f72-5170-ac74-76ed1db1028c":{"description":"roof tile/shingle discoloration confidence","value":""},"2709841b-809f-5c15-90a1-5135879d9faf":{"description":"hip count","value":"0"},"283c040b-7b41-54e6-a5f4-02503f5e2f77":{"description":"turret confidence","value":""},"2bc560c7-6e8a-5b32-adf3-30d6c9c85ea1":{"description":"address","value":"1320 Pasadena Dr Austin TX 78757-1948 United States of America"},"2d9c9f84-ca01-55aa-9365-f139b9c4be16":{"description":"shingle clipped area (sqm)","value":"182.5"},"2dbe363b-6e4d-5104-9cc8-577da0cf65b4":{"description":"missing roof tile or shingle count","value":"0"},"2ed0db12-d355-5c50-b41e-e81fd4df12cc":{"description":"roof condition summary score","value":"76"},"2ee94f7d-8baf-5e5a-8662-fc87b5b2ffb1":{"description":"flat presence","value":"false"},"30a7df49-304c-5221-9586-d66bf2048f76":{"description":"missing roof tile or shingle clipped area (sqft)","value":""},"3c5b7b6e-4f43-55f0-8ac2-f5027fce86b0":{"description":"hip presence","value":"false"},"411a4bbe-4b26-5ab9-896a-4e580d11737b":{"description":"roof with permanent repair clipped area (sqft)","value":""},"43686aba-01f5-548d-9b56-d50b84a2ec40":{"description":"roof count","value":"1"},"45d170f6-3fa2-53c1-b527-043b9ddf15cd":{"description":"height (ft)","value":"17"},"462a59c1-78fb-5d39-a637-a6e607f515ca":{"description":"flat ratio","value":""},"486ba3a4-7b8e-5d48-81fb-7b893da8a1a0":{"description":"missing roof tile or shingle clipped area (sqm)","value":""},"4df56fbf-f3a6-5fb9-8498-3c60c61f31ee":{"description":"zinc staining clipped area (sqm)","value":""},"5019100c-1b99-57ed-b38c-dd2bd023773e":{"description":"roof clipped area (sqm)","value":"191.2"},"53c84c39-d01f-559c-971b-3869cabd22a1":{"description":"building clipped area (sqft)","value":"2058"},"545239ec-3e7f-538e-8286-4a14381423dd":{"description":"roof condition category","value":"Good* (The roof score is also impacted by the presence of miscellaneous imperfections.)"},"565021b3-8d01-53bd-bf3f-6936733d1dbc":{"description":"tile clipped area (sqm)","value":""},"57cb5c4d-b524-592c-8205-a58aa58bda53":{"description":"flat clipped area (sqft)","value":""},"58c3a796-3184-59aa-8e10-cff4ef6a4139":{"description":"turret clipped area (sqm)","value":""},"5964120f-6765-5ed6-a00d-b8872b5ba138":{"description":"hip ratio","value":""},"5992c469-6529-57ec-b7ee-5e9b9c5942e7":{"description":"roof with temporary repair clipped area (sqm)","value":""},"5ac4eb77-f6f7-55e0-9b57-5c805af2f4a5":{"description":"roof ponding ratio","value":""},"5b2a0c14-7f5f-5549-89dd-86f96f4c3f58":{"description":"gable count","value":"1"},"646bc933-a97a-5104-a289-2beb83751138":{"description":"roof with temporary repair confidence","value":""},"654f06e8-d33d-5b45-99d5-eb949dce8a10":{"description":"roof tile/shingle discoloration ratio","value":""},"68d184e7-34f0-5845-bfd1-a74ab1a93c13":{"description":"building clipped area (sqm)","value":"191.2"},"6b8503dc-8553-5928-b02f-a4598fce829f":{"description":"missing roof tile or shingle confidence","value":""},"6c61f542-0624-5424-be61-06e58333881d":{"description":"metal count","value":"0"},"6d2b4795-2181-5863-b18b-ef526412e2e7":{"description":"roof ponding count","value":"0"},"6dd5ff1a-f40a-5a34-a274-9ae35729325b":{"description":"metal clipped area (sqft)","value":""},"70f72112-62a4-574f-af6f-16819c5fb2ca":{"description":"roof rusting clipped area (sqm)","value":""},"748a6069-c857-5af4-a956-d2af092077a8":{"description":"roof ponding clipped area (sqft)","value":""},"74a843bf-e6e7-5151-b124-1a4b906f18fa":{"description":"metal presence","value":"false"},"779578e4-931d-5742-abb9-004c511c2d59":{"description":"missing roof tile or shingle presence","value":"false"},"7a0834cb-c340-501b-acca-48238cfdd16b":{"description":"zinc staining presence","value":"false"},"7b02c815-7c65-524c-8814-edef0004ea26":{"description":"gable clipped area (sqm)","value":"184.7"},"7b0b41c3-f4e8-54fb-b4ae-c14db493bbbc":{"description":"flat confidence","value":""},"7bf696ba-cb02-5567-9fcc-f335c598edaf":{"description":"zinc staining confidence","value":""},"7eb6c701-a003-5ff4-80c3-5c9c5403d189":{"description":"dutch gable clipped area (sqft)","value":""},"7ef99d3d-1b92-516c-8260-4bbbfb7d58b6":{"description":"1 story confidence","value":"0.96"},"83768083-cf16-5d2f-99f7-92c4e3e74b8f":{"description":"url link","value":"https://apps.nearmap.com/maps/#/@30.3452673,-97.7249566,20.00z,0d/V/20220912?locationMarker"},"88f3e05b-ab98-53e0-ad28-8a00312dd1b7":{"description":"structurally damaged roof clipped area (sqm)","value":""},"899352b4-a9e6-5f77-b8a9-f61f82441ca5":{"description":"tile presence","value":"false"},"8bb8b694-481e-50e3-924c-4264d01b32ad":{"description":"roof with temporary repair count","value":"0"},"8f0f0c41-8f78-51f5-8396-ac47c9fab216":{"description":"roof with permanent repair ratio","value":""},"918858c1-79af-5f00-a860-38eb84fb4f0e":{"description":"hip clipped area (sqft)","value":""},"9882088b-1bf1-5545-bdb7-df61328d7578":{"description":"gable presence","value":"true"},"9c7e6313-e9a8-538c-86fb-7a3e9171190b":{"description":"metal confidence","value":""},"9f2b2e1a-ab28-5936-8563-ed28ae1b36f2":{"description":"pitch degrees","value":"23.04"},"a0a7cb47-6360-5bbd-93be-c2bbef263742":{"description":"building count","value":"1"},"a27b2fda-b5dd-59df-9a65-fe8c6ad3350c":{"description":"structurally damaged roof clipped area (sqft)","value":""},"a7740fe6-eb36-57dd-913f-02ae7610066f":{"description":"roof rusting clipped area (sqft)","value":""},"ae121af2-fd13-513b-81d3-2767ce4f4106":{"description":"tile confidence","value":""},"b204ac85-e93c-5089-be77-fe6ecb3c2f0b":{"description":"gable clipped area (sqft)","value":"1988"},"b22c44fe-936e-5c12-b832-a694c005cea8":{"description":"structurally damaged roof presence","value":"false"},"b2756b78-a41b-5099-8b9d-afcfdfbbd364":{"description":"structurally damaged roof confidence","value":""},"b4f367e2-73a6-5a62-8aa0-a3d06f0bac8c":{"description":"turret ratio","value":""},"ba655924-ca97-52bd-8637-ba85b72a3f83":{"description":"shingle confidence","value":"0.958984"},"bc6a1bf9-8210-5500-99fc-aecacf35ed01":{"description":"roof tile/shingle discoloration clipped area (sqft)","value":""},"beb41dd1-d0bd-5938-9ef2-8d21653149f7":{"description":"hip clipped area (sqm)","value":""},"c1c05131-c20f-5fb1-a15d-d18ae0a05e86":{"description":"building presence","value":"true"},"c67f1733-a90c-515b-98d8-7c859b32bd17":{"description":"roof ponding clipped area (sqm)","value":""},"ca63903c-d37c-5f7d-956b-f31ce4e04111":{"description":"structurally damaged roof count","value":"0"},"cb68740e-c83c-5237-ad55-25e85ea641da":{"description":"roof tile/shingle discoloration presence","value":"false"},"ccd75eb0-c570-53a0-b9c9-c1a8b137ce29":{"description":"height (m)","value":"5.2"},"ccede2ad-c9a6-5588-93d0-51c41009754b":{"description":"turret clipped area (sqft)","value":""},"cdce0c0c-ac1e-5d75-8758-60c094bf5e70":{"description":"zinc staining clipped area (sqft)","value":""},"cffdeb80-02d0-54d6-a7ad-c82dfc57cb7c":{"description":"roof tile/shingle discoloration clipped area (sqm)","value":""},"d8bc1884-bf3a-566d-86f0-7a7364705f85":{"description":"zinc staining ratio","value":""},"d95a373b-8eee-5c5a-8bd2-eed6f29cb327":{"description":"roof rusting count","value":"0"},"db7c5528-5778-566d-a005-f42716117271":{"description":"tile clipped area (sqft)","value":""},"df0db13c-72a3-5f3a-b2fc-662f74584af7":{"description":"roof rusting presence","value":"false"},"e09e3924-d921-5e37-a122-00442856f901":{"description":"3+ story confidence","value":"0.00"},"e0b8ffd0-0307-5f98-a01d-a996b097f047":{"description":"flat clipped area (sqm)","value":""},"e1c2203d-640e-5694-be0e-42dd5c372146":{"description":"tile ratio","value":""},"e1c317cd-c7a8-5d0c-be27-386608c87c75":{"description":"turret presence","value":"false"},"e27bbc7d-84be-59eb-8202-501f382f6779":{"description":"dutch gable presence","value":"false"},"e4060345-a28c-5a00-a57a-c20543efa058":{"description":"roof rusting confidence","value":""},"e5ca14b3-7a12-5740-9922-ed5c98f3d800":{"description":"metal ratio","value":""},"e9e6de3a-436a-5f8b-b16d-8344099a428b":{"description":"roof rusting ratio","value":""},"ea9ed8f6-a370-51bb-9200-944ff148b019":{"description":"roof with permanent repair count","value":"0"},"ebe98268-b67b-5f34-b894-d787152f32b8":{"description":"roof presence","value":"true"},"efa9033d-6831-5c7f-9b75-300b66d8473f":{"description":"building confidence","value":"0.962891"},"efb1610a-ad32-5976-8c45-6abb30fe83c4":{"description":"roof tile/shingle discoloration count","value":"0"},"f0fbc01b-535a-5247-b34d-f458cad65423":{"description":"shingle count","value":"1"},"f56c5332-93fb-504f-aaec-4331e3928879":{"description":"roof with temporary repair clipped area (sqft)","value":""},"f6838112-2044-5932-87f1-5f9d4b8cb8e1":{"description":"structurally damaged roof ratio","value":""},"f7f5a8e0-4a34-524e-90c3-56622061c1f3":{"description":"roof ponding confidence","value":""},"f84cbf2c-4947-5fea-b4df-6956059ce14c":{"description":"roof with permanent repair clipped area (sqm)","value":""},"f94d1616-1270-56a3-b000-c2020fb47f52":{"description":"roof with permanent repair confidence","value":""},"fa19e43f-1525-5fad-b423-c7d2d70c796d":{"description":"roof with temporary repair ratio","value":""},"fd68ba03-57f8-5ae8-bb23-b93242a84a37":{"description":"dutch gable ratio","value":""}}}}                  </textarea>
+                  <button onclick="sendToEmbed()">Send JSON to Embed</button>
+                </view>
+            </section>
+            
+</main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="sidebars.js"></script>
+  </body>
+</html>
